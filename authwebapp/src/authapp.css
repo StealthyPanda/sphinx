@@ -43,6 +43,7 @@ h1
     text-align: center;
     background: -webkit-linear-gradient(135deg, #2bff2f, #5387ff);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-top: 0;
     margin-bottom: 1.5em;
