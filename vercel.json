@@ -1,0 +1,14 @@
+{
+    "builds": [
+        {
+            "src": "sphinxexpapp.js",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+          "src": "/(.*)",
+          "dest": "sphinxexpapp.js"
+        }
+    ]
+  }
