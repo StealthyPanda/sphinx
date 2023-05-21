@@ -1,0 +1,28 @@
+{
+	"github.com": [
+		{
+			"cwid": "sp",
+			"hash": "f12957f4c66a8a7a9a0dfacf105d821ee171bb70a2973d9c53d8f527c805c596"
+		},
+		{
+			"cwid": "sps",
+			"hash": "41c2aa0dc118639e900b4a27e75388f92dedcebb262af43f762f726488d4620f"
+		}
+	],
+	"google.com": [
+		{
+			"cwid": "one more",
+			"hash": "10a5ed24573efd9094c20e92372776f9167b12a46bde202658aec56a306a5eb6"
+		},
+		{
+			"cwid": "sp",
+			"hash": "73a10ef50d53032d2cc43f7b965dbcda7f4509342bc700887a362ee71c857faf"
+		}
+	],
+	"moment": [
+		{
+			"cwid": "bruh",
+			"hash": "04d6839ce159de98de61afb84651389e4d92646523370d1729558bb9217dd033"
+		}
+	]
+}
