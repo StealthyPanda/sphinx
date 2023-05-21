@@ -3,22 +3,21 @@ const parser = require('body-parser');
 const path = require('path');
 const sph = require('./sphinx');
 
-// const fileting = require('express-fileupload')
-
 const mainport = 80;
 const main = express();
 
-// main.use(fileting({createParentPath:true}));
 main.use(express.json());
 main.use(parser.urlencoded({extended : true}));
-// main.use(express.static(path.join(__dirname, 'statics')));
-// main.use(express.static(path.join(__dirname, 'webapp', 'build')));
+main.use(express.static(path.join(__dirname, 'authwebapp', 'build')));
+
+//-------------------------------------------------------------------------------------------------
+// /auth endpoints handling (registering and validation):
 
 main.get('/auth', (req, res) => {
     // console.log(req.body);
     
     const result = sph.validate(req.body.cwid, req.body.fqdn, req.body.uid, req.body.pass);
-
+    
     if (result)
     {
         res.json({
@@ -53,11 +52,36 @@ main.post('/auth', (req, res) => {
         })
     }
 });
+//-------------------------------------------------------------------------------------------------
+
+
+
+//-------------------------------------------------------------------------------------------------
+// Serving webapp stuff
+
+main.get('/', (_, res) => {
+    res.redirect('/index.html');
+})
+
+main.get('/home', (_, res) => {
+    res.redirect('/index.html');
+})
+
+main.get('/app', (_, res) => {
+    res.redirect('/index.html');
+})
+
+//-------------------------------------------------------------------------------------------------
+
 
 
 
 
 
 main.listen(mainport, () => {
-    console.log(`Sphinx API started on port ${mainport}\nAvailable endpoints:\n-> /\n-> /auth`);
+    console.log(`Sphinx API started on port ${mainport}\nAvailable endpoints:`);
+    console.log("-> / (webapp)")
+    console.log("-> /auth")
+    console.log("-> /home (webapp)")
+    console.log("-> /app (webapp)")
 });
