@@ -17,6 +17,14 @@
 		{
 			"cwid": "sp",
 			"hash": "73a10ef50d53032d2cc43f7b965dbcda7f4509342bc700887a362ee71c857faf"
+		},
+		{
+			"cwid": "newguy",
+			"hash": "1994ef612d52db5b497bbbae6ee4d258a19d80a9cc987e7fea2f6a5f7e2abdf9"
+		},
+		{
+			"cwid": "moreguys",
+			"hash": "e73b36ff53b70eab253486e23372ef5ac8607116c00a9d80f663a04ade3fbef8"
 		}
 	],
 	"moment": [

@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { createHash } = require('crypto');
 
-const defaulthasher = createHash('sha3-256');
+const defaulthasher = ('sha3-256');
 exports.defaulthasher = defaulthasher;
 
 const udataloc = path.join(__dirname, 'privates', 'udata.json');
@@ -25,7 +25,7 @@ function gethash(cwid, fqdn, uid, pass, hasher)
     for (let i = 0; i < 11; i++) str += fqdn;
     for (let i = 0; i < 20; i++) str += uid;
     for (let i = 0; i < 02; i++) str += pass;
-    return hasher.update(str).digest('hex');
+    return createHash(hasher).update(str).digest('hex');
 }
 exports.gethash = gethash;
 
@@ -46,24 +46,25 @@ function register(cwid, fqdn, uid, pass)
         readdata[fqdn].forEach(element => {
             if (element.cwid === cwid)
             {
-                console.log('🤷This user is already registered!');
-                console.log(element);
+                // console.log('🤷This user is already registered!');
+                // console.log(element);
                 flag = true;
             }
         });
-        if (flag) return;
+        if (flag) return 1;
 
         readdata[fqdn].push(newuser)
         fs.writeFileSync(udataloc, JSON.stringify(readdata, null, '\t'));
-        console.log(`✅User added successfully!`);
-        console.log(newuser);
-        return;
+        // console.log(`✅User added successfully!`);
+        // console.log(newuser);
+        return 0;
     }
 
     readdata[fqdn] = [newuser];
     fs.writeFileSync(udataloc, JSON.stringify(readdata, null, '\t'));
-    console.log(`✅User added successfully!`);
-    console.log(newuser);
+    // console.log(`✅User added successfully!`);
+    // console.log(newuser);
+    return 0;
 }
 exports.register = register;
 
@@ -91,7 +92,7 @@ function validate(cwid, fqdn, uid, pass)
     }
     else
     {
-        console.log("👎User not found!");
+        // console.log("👎User not found!");
         return false;
     }
 }
