@@ -46,8 +46,24 @@ h1
     background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-top: 0;
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
 }
+
+p{
+    text-align: center;
+    height: 4em;
+    width: 20em;
+    align-self: center;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    border-radius: 0.3em;
+}
+
+p:hover
+{
+    background-color: rgb(191, 191, 191);
+}
+
 .authform
 {
     height: fit-content;

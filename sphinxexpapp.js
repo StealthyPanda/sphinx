@@ -6,14 +6,14 @@ const sph = require('./sphinx');
 const mainport = 80;
 const main = express();
 
-main.use(express.json());
+main.use(express.json({type : 'application/json'}));
 main.use(parser.urlencoded({extended : true}));
 main.use(express.static(path.join(__dirname, 'authwebapp', 'build')));
 
 //-------------------------------------------------------------------------------------------------
 // /auth endpoints handling (registering and validation):
 
-main.get('/auth', (req, res) => {
+main.options('/auth', (req, res) => {
     // console.log(req.body);
     
     const result = sph.validate(req.body.cwid, req.body.fqdn, req.body.uid, req.body.pass);
@@ -36,6 +36,9 @@ main.get('/auth', (req, res) => {
 });
 
 main.post('/auth', (req, res) => {
+    // console.log("Entered post handler");
+    // console.log(req.body);
+    // console.log(req.body.cwid, req.body.fqdn, req.body.uid, req.body.pass);
     if (sph.register(req.body.cwid, req.body.fqdn, req.body.uid, req.body.pass))
     {
         res.status(422);
@@ -46,6 +49,7 @@ main.post('/auth', (req, res) => {
     }
     else
     {
+        res.status(200);
         res.json({
             "status" : true,
             "message" : "✅User registered successfully."

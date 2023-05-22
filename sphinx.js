@@ -31,6 +31,8 @@ exports.gethash = gethash;
 
 function register(cwid, fqdn, uid, pass)
 {
+    // console.log("inside register");
+    // console.log(cwid, fqdn, uid, pass);
     const readdata = JSON.parse(fs.readFileSync(udataloc).toString());
     const hash = gethash(cwid, fqdn, uid, pass, defaulthasher);
 
@@ -49,6 +51,7 @@ function register(cwid, fqdn, uid, pass)
                 // console.log('🤷This user is already registered!');
                 // console.log(element);
                 flag = true;
+                // console.log(element.cwid, cwid, "matched", element);
             }
         });
         if (flag) return 1;

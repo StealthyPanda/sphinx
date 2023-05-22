@@ -9,6 +9,10 @@
         {
           "src": "/(.*)",
           "dest": "sphinxexpapp.js"
+        },
+        {
+            "src": "/",
+            "dest": "authwebapp/build/index.html"
         }
     ]
   }
