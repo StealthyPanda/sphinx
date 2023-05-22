@@ -43,7 +43,7 @@ export const Authform = () => {
         }
         else
         {
-            changeIndicator("🤮BAD QUERY!")
+            changeIndicator(<p>🤮BAD QUERY!</p>)
             throw TypeError("Invalid Query Type");
         }
 
