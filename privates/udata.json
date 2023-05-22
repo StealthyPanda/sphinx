@@ -4,5 +4,15 @@
 			"cwid": "sp",
 			"hash": "f12957f4c66a8a7a9a0dfacf105d821ee171bb70a2973d9c53d8f527c805c596"
 		}
+	],
+	"google.com": [
+		{
+			"cwid": "sp",
+			"hash": "73a10ef50d53032d2cc43f7b965dbcda7f4509342bc700887a362ee71c857faf"
+		},
+		{
+			"cwid": "piyush",
+			"hash": "4e6ec0f8f481725adfd235bb50c7c9d86faa757c5ba4a58b7a0d9801b4e45f7d"
+		}
 	]
 }
